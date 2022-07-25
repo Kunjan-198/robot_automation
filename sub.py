@@ -8,9 +8,10 @@ def callback(msg):
 	print (msg)
 	left=msg.linear.x*(0.07)+(msg.angular.z*(0.07))
 	right=msg.linear.x*(0.07)-(msg.angular.z*(0.07))
-	pwm1=int()
-        arduino.write(cmd.encode())
-	time.sleep(3)
+	print('left wheels  ------------------- ',left)
+	print('right wheels  ------------------- ',right)
+        #arduino.write(cmd.encode())
+	#time.sleep(3)
     
 if __name__ == '__main__':
     
