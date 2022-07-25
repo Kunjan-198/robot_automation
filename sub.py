@@ -35,6 +35,7 @@ if __name__ == '__main__':
                     while arduino.inWaiting()==0: pass
                     if  arduino.inWaiting()>0: 
                         answer=arduino.read(10)
+			answer=answer.decode('utf-8')
                         print(answer)
                         arduino.flushInput() #remove data after reading
             except KeyboardInterrupt:
