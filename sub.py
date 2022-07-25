@@ -6,12 +6,18 @@ import serial,time
 
 def callback(msg):
 	print (msg)
-	left=msg.linear.x*(0.07)+(msg.angular.z*(0.07))
-	right=msg.linear.x*(0.07)-(msg.angular.z*(0.07))
-	print('left wheels  ------------------- ',left)
-	print('right wheels  ------------------- ',right)
-        #arduino.write(cmd.encode())
-	#time.sleep(3)
+	left=msg.linear.x+(msg.angular.z)
+	right=msg.linear.x-(msg.angular.z)
+	if(abs(left)>1.5):
+	    left=(left/abs(left))*1.5
+	if(abs(right)>1.5):
+	    right=(right/abs(right))*1.5
+	PWM1 = (left/1.5)*255
+	PWM2 = (right/1.5)*255
+        arduino.write(PWM1.encode())
+	time.sleep(1)
+	arduino.write(PWM2.encode())
+	time.sleep(1)
     
 if __name__ == '__main__':
     
