@@ -18,7 +18,8 @@ def callback(msg):
 	time.sleep(1)
 	arduino.write(PWM2.encode())
 	time.sleep(1)
-    
+
+rospy.init_node('Publisher')	
 if __name__ == '__main__':
     
     print('Running. Press CTRL-C to exit.')
