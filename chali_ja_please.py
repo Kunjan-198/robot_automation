@@ -33,14 +33,4 @@ if __name__ == '__main__':
     rospy.init_node('Please aa vakhte thai ja')
     sub =  rospy.Subscriber('cmd_vel', Twist, callback)
     rospy.spin()
-#     print('Running. Press CTRL-C to exit.')
-#     with serial.Serial("/dev/ttyACM0", 9600, timeout=1) as arduino:
-#         time.sleep(0.1) #wait for serial to open
-#         if arduino.isOpen():
-#             print("{} connected!".format(arduino.port))
-#             try:
-#                 while True:
-#                     sub =  rospy.Subscriber('cmd_vel', Twist, callback)
-                    
-#             except KeyboardInterrupt:
-#                 print("KeyboardInterrupt has been caught.")
+
