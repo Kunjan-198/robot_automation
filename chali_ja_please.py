@@ -21,11 +21,7 @@ def callback(msg):
         PWM2 = ((right+1.5)/3)*512
         arr.data=[PWM1,PWM2]
         pub.publish(arr)
-        
-#         arduino.write(PWM1.encode())
-#         time.sleep(1)
-#         arduino.write(PWM2.encode())
-#         time.sleep(1)
+
 
 pub = rospy.Publisher('/Hope',Int64MultiArray,queue_size=10)
 if __name__ == '__main__':
